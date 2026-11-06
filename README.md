@@ -58,6 +58,7 @@ response structure are kept same as of legacy portal.
 
 - No assumption is made with public signing key. It is assumed that it is liable to be changed in the future, hence kept the development while keeping this in mind.
 
+> **PS:** I have kept code related to MySQL as comment. For ease of continuing.
 --- 
 
 ### Design Decision & Trade-offs:
