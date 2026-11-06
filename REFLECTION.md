@@ -1,5 +1,5 @@
  
-#### What assumptions did you make?
+### What assumptions did you make?
 
  - We will be directly serving from 3rd party API (with no stale data issue in any case provided 3rd party data is single source of truth).
 
@@ -12,25 +12,27 @@
 
 ---
 
-#### Which part was the most difficult, and how did you get unstuck?
+### Which part was the most difficult, and how did you get unstuck?
 
-     2 parts were most difficult in terms of that they took too much time of mine:
+2 parts were most difficult in terms of that they took too much time of mine:
 
-        1. I have done login to Urja legacy API programmatically, at the time of whenever there is no cookie in the application session or the cookie is expired.
-        Major challenge was calling that API, got to various things like that 
-         - it is not a JSON body based submission.
-         - most importantly, it was redirecting the response. so that was getting hard to extract the cookie out of it. so had to disable that by configuring 
-         the internal used calling client (rest template).
+1. I have done login to Urja legacy API programmatically, at the time of whenever there is no cookie in the application session or the cookie is expired.
+Major challenge was calling that API, got to various things like that 
 
-         2. I needed to figure out how x-signature and x-timestamp were being computed out of a public signing key. For that, I need to scan the FE code. Finally got a format by which message 
-         for encryption algorithm was constructed (with various parameters). and finally implemented that same into my code. using the same algorithm required googling.
+ - it is not a JSON body based submission.
 
-     Apart from it, my initial time went into the end to end setup of the application + MySQL DB. I was planning to use the DB for miscellaneous purposes.
-     Hence kept opened the scope of it. 
+ - most importantly, it was redirecting the response. so that was getting hard to extract the cookie out of it. so had to disable that by configuring 
+ the internal used calling client (rest template).
+
+2. I needed to figure out how x-signature and x-timestamp were being computed out of a public signing key. For that, I need to scan the FE code. Finally got a format by which message 
+for encryption algorithm was constructed (with various parameters). and finally implemented that same into my code. using the same algorithm required googling.
+
+Apart from it, my initial time went into the end to end setup of the application + MySQL DB. I was planning to use the DB for miscellaneous purposes.
+hence kept opened the scope of it. 
 
 ---
 
-#### If you had another day, what would you improve?
+### If you had another day, what would you improve?
 
   - Login/Logout for engineers/programs. Metrics for API usage user wise. Implementing metrics/logs.
 
@@ -39,12 +41,15 @@
   - a simple UI. 
 
 
-#### What mistake did you make while solving this (there's always one)?
+---
+
+### What mistake did you make while solving this (there's always one)?
 
   - Didn't look at login response initially, that how it could impact when done programmatically. (due to redirects).
   
+---
 
-#### If you were reviewing your own submission, what would you criticise?
+### If you were reviewing your own submission, what would you criticise?
 
 
  - There are no unit/integration tests.
