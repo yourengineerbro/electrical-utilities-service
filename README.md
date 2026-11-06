@@ -1,8 +1,47 @@
 ### How to run:
 
+PreRequisites:
+
+1. Git Bash Installed.
+2. Docker Desktop (Running Docker Engine)
+
+Open Docker Desktop, and wait for the docker engine to start.
+
+and Execute following commands in git bash replacing the email, password
+with the values shared to me. 
+Docker will pick that up from environment and pass to the application.
+so that application can use those credentials to serve the requests.
 
 
+```
+1.
 
+git clone https://github.com/yourengineerbro/electrical-utilities-service.git
+
+2. 
+
+cd electrical-utilities-service
+
+3.
+
+export URJA_API_EMAIL={ENTER_EMAIL_THAT_YOU_SHARED_TO_ME}
+export URJA_API_PASSWORD={ENTER_PASSWORD_THAT_YOU_SHARED_TO_ME} 
+
+# exclude the {} while executing above commands. For example,
+# export URJA_API_EMAIL=myemail@urja.tech 
+
+4.
+docker compose up --build
+
+```
+After waiting for the docker to start the container, once application gets started completely:
+
+Go to http://localhost:8080/swagger-ui/index.html
+
+For swagger-ui, and to see the service in action.
+
+
+PS: if you see String: " Tomcat started on port 8080 (http) with context path '/' " in the logs of docker command, that means service has started successfully.
 ### Assumptions:
 
 - We will be serving the latest data to the client, without any possibility of serving stale data; for this purpose data is being returned to the client after processed 

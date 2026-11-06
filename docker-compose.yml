@@ -22,7 +22,7 @@ services:
 
   app:
     build: .
-    container_name: spring_boot_container
+    container_name: aman_gupta_app_container
     restart: always
     ports:
       - "8080:8080"
