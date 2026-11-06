@@ -20,6 +20,8 @@ git clone https://github.com/yourengineerbro/electrical-utilities-service.git
 
 2. 
 
+# navigate to the clone repo.
+
 cd electrical-utilities-service
 
 3.
